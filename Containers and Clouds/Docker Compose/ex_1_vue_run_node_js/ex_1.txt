@@ -1,0 +1,9 @@
+docker image build -t my-webapp .
+ 
+docker login
+
+docker tad my-webapp <host>/my-webapp
+
+docker push <host>/my-webapp
+
+docker run -d -p 8080:8080 <host>/my-webapp

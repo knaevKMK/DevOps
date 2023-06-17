@@ -1,0 +1,2 @@
+docker run -p 9115:9115 quay.io/prometheus/blackbox-exporter
+

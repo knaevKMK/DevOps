@@ -1,0 +1,25 @@
+az login
+
+az group create --name "kneavlibraryrg" --location westeurope
+
+az acr create --resource-group kneavlibraryrg --name kneavlibrarycr --sku Basic
+
+docker build -t kneavexam .
+
+docker tag kneavexam kneavlibrarycr.azurecr.io/library
+
+docker push kneavlibrarycr.azurecr.io/library
+
+az acr login --name kneavlibrarycr
+
+docker push kneavlibrarycr.azurecr.io/library
+
+docker login azure ---optional
+
+docker context create aci librarycontext
+
+docker context ls
+
+docker context use librarycontext
+
+docker compose up -d

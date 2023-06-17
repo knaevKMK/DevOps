@@ -1,0 +1,17 @@
+docker network create maria-network
+
+docker run `
+--network maria-network `
+--name mariadb_server `
+--env MARIADB_USER=example-user `
+--env MARIADB_PASSWORD=my_cool_secret `
+--env MARIADB_ROOT_PASSWORD=my-secret-pw `
+-d mariadb:latest
+
+docker run `
+-it `
+--network maria-network `
+--name mariadb_client `
+--rm mariadb mariadb `
+-h mariadb_server `
+-u example-user -p

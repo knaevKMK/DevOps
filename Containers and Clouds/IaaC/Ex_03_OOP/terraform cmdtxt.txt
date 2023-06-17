@@ -1,0 +1,11 @@
+terraform fmt -recursive
+
+terraform init
+
+terraform validate
+
+terraform apply
+or
+terraform apply -var-file="values.tfvars"
+
+terraform destroy

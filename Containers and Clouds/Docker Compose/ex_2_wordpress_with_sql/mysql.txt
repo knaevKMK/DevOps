@@ -1,0 +1,11 @@
+docker run -dit `
+--name wordpress_db `
+-e MYSQL_ROOT_PASSWORD=pass `
+-e MYSQL_DATABASE=wordpressdb `
+-e MYSQL_USER=wordpress `
+-e MYSQL_PASSWORD=wordpress 
+--expose 3306 `
+--expose 33060 `
+--network my-network `
+-v "$PWD/data:/var/lib/mysql" `
+mysql

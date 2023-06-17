@@ -1,0 +1,10 @@
+docker run -dit `
+>> --name wordpress-website `
+>> -e WORDPRESS_DB_HOST=wordpress_db `
+>> -e WORDPRESS_DB_USER=wordpress `
+>> -e WORDPRESS_DB_PASSWORD=wordpress `
+>> -e WORDPRESS_DB_NAME=wordpressdb `
+>> -v "$PWD/wp-data:/var/wwww/thml" `
+>> -p 80:80 `
+>> --network my-network `
+>> wordpress
